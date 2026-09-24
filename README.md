@@ -4,16 +4,18 @@ Personal IR **receiver / decoder** build by **Todd Davis** ([Cull3411](https://g
 
 This repo documents the decoder side of the same Grok-assisted work as [Transponder-Project](https://github.com/Cull3411/Transponder-Project): receive the IR burst, recover timing, and identify the transponder ID.
 
+Transponder IDs run from **1 to 96**. Nearly all of those IDs have been worked through. The published emitter sketch is **ID 1 as an example**.
+
 ## Pair project
 
 | Repo | Role |
 | --- | --- |
-| [Transponder-Project](https://github.com/Cull3411/Transponder-Project) | ATtiny85 Digispark emitter (ID 1 sketch on P1 / PB1) |
+| [Transponder-Project](https://github.com/Cull3411/Transponder-Project) | ATtiny85 Digispark emitter (example: ID 1 of 1–96, on P1 / PB1) |
 | **Decoder-Project** (this repo) | Receiver / decoder that reads that IR and reports an ID |
 
 ## What this is
 
-- Hardware + firmware notes for an IR receiver/decoder used with the lap-style transponder
+- Hardware + firmware notes for an IR receiver/decoder used with the oval / club transponder
 - AI (Grok, ChatGPT, Copilot) used to draft timing and decode logic, then verified on the bench
 - Not an unattended AI agent and not a commercial product
 
@@ -36,7 +38,7 @@ Same pattern as the transponder work:
 1. State the constraint (board, IR demodulator pin, expected bit time).
 2. Ask for a small piece (ISR, gap measurement, ID table) — not the whole system.
 3. Treat the reply as a draft.
-4. Test against a known-good emitter (Transponder ID 1).
+4. Test against a known-good emitter (example: Transponder ID 1 of 1–96).
 5. Feed back real symptoms ("ID 1 never locks", "gaps read 8 ms not 12.5 ms").
 
 See [docs/ai-workflow.md](docs/ai-workflow.md).
