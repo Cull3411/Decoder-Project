@@ -1,0 +1,12 @@
+build/
+.pio/
+.vscode/
+*.elf
+*.hex
+*.bin
+*.map
+.DS_Store
+Thumbs.db
+*.pem
+.env
+secrets.h
